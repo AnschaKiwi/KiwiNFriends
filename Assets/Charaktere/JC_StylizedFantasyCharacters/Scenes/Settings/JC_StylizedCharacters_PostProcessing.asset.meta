@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6f895d3a4f7ec914e837946247876189
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 324817
+  packageName: Stylized Fantasy Characters
+  packageVersion: 1.0
+  assetPath: Assets/JC_StylizedFantasyCharacters/Scenes/Settings/JC_StylizedCharacters_PostProcessing.asset
+  uploadId: 768031
