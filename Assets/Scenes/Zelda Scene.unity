@@ -124,11 +124,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8334541636228895817, guid: 005fe1deed272d44996cbd1a7c1caa66, type: 3}
   m_PrefabInstance: {fileID: 1028599673}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &79821772 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4333195937118551681, guid: 005fe1deed272d44996cbd1a7c1caa66, type: 3}
-  m_PrefabInstance: {fileID: 1028599673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &79821774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.9
   gravity: -9.81
+  cameraTransform: {fileID: 1465918516}
 --- !u!143 &79821777
 CharacterController:
   m_ObjectHideFlags: 0
@@ -691,13 +687,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71b09af17859e14ab707b91ed667de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 79821772}
-  offset: {x: 0, y: 5, z: -10}
-  smoothSpeed: 5
-  zoomSpeed: 5
-  minZoom: 3
-  maxZoom: 15
-  rotationSpeed: 200
+  target: {fileID: 0}
+  smoothSpeed: 7.5
+  zoomSpeed: 7
+  minZoom: 1
+  maxZoom: 10
+  rotationSpeed: 300
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
