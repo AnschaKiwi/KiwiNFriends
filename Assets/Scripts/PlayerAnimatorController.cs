@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerAnimatorController : MonoBehaviour
 {
     private Animator animator;
+    private CharacterController controller;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -17,5 +19,11 @@ public class PlayerAnimatorController : MonoBehaviour
         bool isWalking = Mathf.Abs(h) > 0.1f || Mathf.Abs(v) > 0.1f;
 
         animator.SetBool("isWalking", isWalking);
+
+        // Sprung Trigger setzen
+        if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
+        {
+            animator.SetTrigger("Jump");
+        }
     }
 }
