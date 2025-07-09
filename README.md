@@ -1,56 +1,44 @@
-# 🥝 Kiwi n Friends
+📘 README – Kiwi n Friends (Zelda Style Project)
+Stand: 9. Juli 2025
 
-**Ein fröhliches 3D-Abenteuer rund um eine mutige kleine Kiwi!**  
-Comicartiger Stil, liebevolle Welt und ein Hauch Magie – begleitet von Gecko-Companion Diego 🦎✨
+🎮 Aktuelle Features
+🛏️ Startsequenz mit „Schlaf“-Animation
+→ Heldin wacht erst nach Leertaste auf
+→ Sanfter Übergang: Sleep → StandUp → LookAround → Idle
 
----
+🔐 Bewegung gesperrt, bis Aufwachvorgang abgeschlossen ist
+→ Spielerin kann erst nach „Idle“ herumlaufen
 
-## 🎮 Projektüberblick
+🔦 Selbstgebaute Taschenlampe
+→ Weinbecher + Spotlight
+→ Ein- und ausschaltbar mit Taste F
+→ Flackert gelegentlich für Stimmung
 
-- **Spieltyp:** Third-Person-Adventure mit Top-Down-Kamera  
-- **Engine:** Unity (URP)  
-- **Genre:** Erkundung, Crafting, humorvolle Quests  
-- **Zielplattform:** PC (später evtl. Switch & Mobile)
+☀️🌙 Tag-Nacht-Zyklus (60 Sek. Testlauf oder 25/15 Minuten real)
+→ Sonne wandert über den Himmel
+→ Lichtfarbe und Intensität passen sich an
+→ Kann später auf echten Rhythmus erweitert werden
 
----
+🕰️ Uhrzeit-Anzeige oben rechts (TextMeshPro)
+→ Zeigt aktuelle Spielzeit (z. B. 09:01) basierend auf Tageszeit
+→ Canvas auf „Screen Space - Overlay“
 
-## 🧰 Tech Stack
+🧩 Technik & Struktur
+Animator mit Trigger-basiertem Einstieg (Aufsteher)
 
-- Unity 2023+ mit **Universal Render Pipeline (URP)**
-- Git für Versionskontrolle (über **GitHub Desktop**)
-- Blender (für Modellierung & Animation der Kiwi)
-- Shader Graph (für stylized Effekte)
+Bewegung wird erst durch StateMachineBehaviour (BewegungFreigeben.cs) freigegeben
 
----
+Klar getrennte UI:
 
-## 📂 Projektstruktur
+Overlay-Canvas für HUD (Uhrzeit)
 
-- `Assets/` – Alles was im Spiel sichtbar ist  
-- `Packages/` – Abhängigkeiten und Unity-Komponenten  
-- `ProjectSettings/` – Unity-spezifische Einstellungen  
-- `.gitignore` – Ignoriert automatisch unnötige Dateien wie Library, Temp etc.
+World-Canvas optional für spätere Sprechblasen
 
----
+📌 Nächste Schritte (optional)
+🗨️ Sprechblase bei „LookAround“ anzeigen („Was passiert … wo bin ich?“)
 
-## ✅ Bisher erledigt
+🎨 Optische Deko: Ruine / Startgebiet aufbauen
 
-- [x] Unity-Projekt eingerichtet (URP)
-- [x] Git-Repo verknüpft und initialer Commit
-- [x] Projekt auf GitHub veröffentlicht  
-- [ ] Kiwi importieren & animieren  
-- [ ] Welt aufbauen  
-- [ ] Baum-Interaktion & Inventar  
-- [ ] Gecko als Reittier hinzufügen 🦎
+🕰️ Später: Analoge Uhr mit echten Zeigern im UI
 
----
-
-## 💡 Vision
-
-Ein Spiel voller Herz und Witz, in dem eine kleine Kiwi große Abenteuer erlebt.  
-Sammle Ressourcen, erkunde geheimnisvolle Orte – und reite auf deinem besten Freund Diego in den Sonnenuntergang. 🌄✨
-
----
-
-## 🧙‍♀️ Federassistentin: ChatGPT
-
-Projekt begleitet von einer KI, die immer weiß, was zu tun ist 😉  
+🔧 Aufsteh-Animation noch feintunen (z. B. langsamer, natürlicher)
