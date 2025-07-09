@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         if (!PlayerAnimatorController.hasStarted)
         {
             // Optional: Animation stoppen, falls nötig
-            animator.SetFloat("Speed", 0f);
+            // animator.SetFloat("Speed", 0f);
             return;
         }
 

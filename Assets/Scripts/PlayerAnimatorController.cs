@@ -10,16 +10,15 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
+        hasStarted = false;
     }
 
     void Update()
     {
         // Spielstart nur bei W oder Leertaste
-        if (!hasStarted && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
+        if (!hasStarted && (Input.GetKeyDown(KeyCode.Space)))
         {
-            hasStarted = true;
-            animator.SetBool("hasStarted", true);
-            // animator.SetTrigger("Start");
+            animator.SetTrigger("Aufstehen");
         }
 
         if (!hasStarted)
