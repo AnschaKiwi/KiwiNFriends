@@ -24,6 +24,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Bewegung und Sprung nur, wenn das Spiel gestartet wurde
+        if (!PlayerAnimatorController.hasStarted)
+        {
+            // Optional: Animation stoppen, falls nötig
+            animator.SetFloat("Speed", 0f);
+            return;
+        }
+
         // Countdown für Sprungverhinderung
         jumpTimer -= Time.deltaTime;
 
@@ -57,14 +65,21 @@ public class PlayerMovement : MonoBehaviour
         if (controller.isGrounded)
         {
             if (isJumping)
-                isJumping = false;
-
-            if (verticalVelocity < 0f)
-                verticalVelocity = 0f;
+            {
+                // NICHT sofort auf 0 setzen, erst nach dem Sprung!
+                // isJumping bleibt true, bis wir wirklich abgehoben haben
+            }
+            else
+            {
+                if (verticalVelocity < 0f)
+                    verticalVelocity = 0f;
+            }
         }
         else
         {
             verticalVelocity += gravity * Time.deltaTime;
+            if (verticalVelocity < 0f)
+                isJumping = false; // Wir sind in der Luft, Sprung ist vorbei
         }
 
         // Bewegung zusammensetzen

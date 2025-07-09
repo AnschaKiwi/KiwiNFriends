@@ -4,6 +4,7 @@ public class PlayerAnimatorController : MonoBehaviour
 {
     private Animator animator;
     private CharacterController controller;
+    public static bool hasStarted = false; // <-- static!
 
     void Start()
     {
@@ -13,7 +14,20 @@ public class PlayerAnimatorController : MonoBehaviour
 
     void Update()
     {
-        // Bewegung prüfen (WASD oder Pfeiltasten)
+        // Spielstart nur bei W oder Leertaste
+        if (!hasStarted && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
+        {
+            hasStarted = true;
+            animator.SetBool("hasStarted", true);
+            // animator.SetTrigger("Start");
+        }
+
+        if (!hasStarted)
+        {
+            animator.SetBool("isWalking", false);
+            return; // Alles andere wird übersprungen!
+        }
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         bool isWalking = Mathf.Abs(h) > 0.1f || Mathf.Abs(v) > 0.1f;

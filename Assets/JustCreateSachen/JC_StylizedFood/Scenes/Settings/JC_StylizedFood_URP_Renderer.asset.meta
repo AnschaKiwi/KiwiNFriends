@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5fdaadd0adfca3f488f285c1d2c7cae5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 301509
+  packageName: Stylized Food 3D Pack
+  packageVersion: 1.0
+  assetPath: Assets/JC_StylizedFood/Scenes/Settings/JC_StylizedFood_URP_Renderer.asset
+  uploadId: 705486
