@@ -43,7 +43,21 @@ public class CameraFollow : MonoBehaviour
 
         // Zielposition auf Kopfhöhe
         Vector3 targetHeadPos = target.position + Vector3.up * 1.5f;
-        Vector3 desiredPosition = targetHeadPos + rotatedOffset;
+        // Vector3 desiredPosition = targetHeadPos + rotatedOffset;
+
+        // Zielposition berechnen (vor Wandprüfung)
+        Vector3 rawCameraPos = targetHeadPos + rotatedOffset;
+
+        // Raycast prüfen (Kollision zwischen Kopf und Kamera)
+        RaycastHit hit;
+        if (Physics.Raycast(targetHeadPos, rotatedOffset.normalized, out hit, rotatedOffset.magnitude))
+        {
+            // Wenn Wand im Weg → Kamera nur bis zur Wand setzen
+            rawCameraPos = hit.point;
+        }
+
+        Vector3 desiredPosition = rawCameraPos;
+
 
         // Weiches Nachführen der Kamera
         transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
