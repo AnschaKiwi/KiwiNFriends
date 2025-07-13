@@ -4,6 +4,7 @@ public class AufwachSteuerung : MonoBehaviour
 {
     public Animator animator;
     private bool istAufgewacht = false;
+    public bool skipAufstehen = false;
 
     void Update()
     {

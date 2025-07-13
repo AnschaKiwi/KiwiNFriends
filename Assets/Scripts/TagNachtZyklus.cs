@@ -1,3 +1,4 @@
+using System.Data;
 using UnityEngine;
 
 public class TagNachtZyklus : MonoBehaviour
@@ -7,7 +8,12 @@ public class TagNachtZyklus : MonoBehaviour
     public TMPro.TextMeshProUGUI uhrzeitText;
 
     private float zeit;
-
+    void Start()
+    {
+        // Startzeit festlegen (z.B. 9 Uhr morgens)
+        float startStunde = 8f;
+        zeit = (startStunde / 24f) * zyklusDauerInSekunden;
+    }
     void Update()
     {
         // Zeit hochzählen
@@ -23,7 +29,7 @@ public class TagNachtZyklus : MonoBehaviour
         sonnenLicht.transform.rotation = Quaternion.Euler(xRot, yRot, 0f);
 
         // Intensität je nach Sonnenstand (sinusförmig)
-        float versatz = -0.15f; // verschiebt den Sinus nach links (mehr Tageslicht)
+        float versatz = -0.25f;
         float intensität = Mathf.Clamp01(Mathf.Sin((t + versatz) * Mathf.PI * 2f));
         sonnenLicht.intensity = Mathf.Lerp(0.1f, 1.2f, intensität);
 
