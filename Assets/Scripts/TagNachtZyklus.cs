@@ -14,34 +14,36 @@ public class TagNachtZyklus : MonoBehaviour
         float startStunde = 8f;
         zeit = (startStunde / 24f) * zyklusDauerInSekunden;
     }
+
     void Update()
     {
-        // Zeit hochzählen
-        zeit += Time.deltaTime;
-        float t = zeit / zyklusDauerInSekunden;
+        // --- Deaktiviert für späteren Einsatz ---
 
-        if (zeit > zyklusDauerInSekunden)
-            zeit = 0f;
+        // // Zeit hochzählen
+        // zeit += Time.deltaTime;
+        // float t = zeit / zyklusDauerInSekunden;
 
-        // Sonne rotiert um X und leicht um Y (z.B. 30°)
-        float xRot = (t * 360f) % 360f;
-        float yRot = 30f; // z.B. 30 Grad schräg
-        sonnenLicht.transform.rotation = Quaternion.Euler(xRot, yRot, 0f);
+        // if (zeit > zyklusDauerInSekunden)
+        //     zeit = 0f;
 
-        // Intensität je nach Sonnenstand (sinusförmig)
-        float versatz = -0.25f;
-        float intensität = Mathf.Clamp01(Mathf.Sin((t + versatz) * Mathf.PI * 2f));
-        sonnenLicht.intensity = Mathf.Lerp(0.1f, 1.2f, intensität);
+        // // Sonne rotiert um X und leicht um Y (z.B. 30°)
+        // float xRot = (t * 360f) % 360f;
+        // float yRot = 30f; // z.B. 30 Grad schräg
+        // sonnenLicht.transform.rotation = Quaternion.Euler(xRot, yRot, 0f);
 
-        // Farbverlauf: Tag -> Abend -> Nacht -> Morgen -> Tag
-        Color tag = new Color(1f, 0.956f, 0.839f); // warmes Tageslicht
-        Color nacht = new Color(0.2f, 0.3f, 0.4f); // kühle Nachtfarbe
-        sonnenLicht.color = Color.Lerp(nacht, tag, intensität);
+        // // Intensität je nach Sonnenstand (sinusförmig)
+        // float versatz = -0.25f;
+        // float intensität = Mathf.Clamp01(Mathf.Sin((t + versatz) * Mathf.PI * 2f));
+        // sonnenLicht.intensity = Mathf.Lerp(0.1f, 1.2f, intensität);
 
-        // Uhrzeit
-        float uhrzeit = (zeit / zyklusDauerInSekunden) * 24f; // 0-24 Stunden
-        int stunde = Mathf.FloorToInt(uhrzeit);
-        int minute = Mathf.FloorToInt((uhrzeit - stunde) * 60f);
-        uhrzeitText.text = stunde.ToString("00") + ":" + minute.ToString("00");
+        // // Farbverlauf: Tag -> Abend -> Nacht -> Morgen -> Tag
+        // Color tag = new Color(1f, 0.956f, 0.839f); // warmes Tageslicht
+        // Color nacht = new Color(0.2f, 0.3f, 0.4f); // kühle Nachtfarbe
+        // sonnenLicht.color = Color.Lerp(nacht, tag, intensität);
+
+        // // Uhrzeit anzeigen
+        // float uhrzeit = (zeit / zyklusDauerInSekunden) * 24f; // 0-24 Stunden
+        // int stunde = Mathf.FloorToInt(uhrzeit);
+        // int minute = Mathf.FloorToInt((uhrzeit - stunde) * 60f);
     }
 }

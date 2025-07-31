@@ -1,16 +1,23 @@
 using UnityEngine;
+using System.Collections;
 
 public class Taschenlampe : MonoBehaviour
 {
     public Light taschenlampenLicht;
     public KeyCode schaltTaste = KeyCode.F;
     public bool zufälligesFlackern = false;
-    private bool istAn = true;
+    private bool istAn = false;
     private bool flackertGerade = false;
 
     private float flackerTimer = 0f;
     public float flackerPruefIntervall = 0.20f; // Wie oft pro Sekunde geprüft wird
     public float flackerChance = 0.20f;        // Wahrscheinlichkeit pro Prüfung
+
+    void Start()
+    {
+        // Stelle sicher, dass das Licht den Startwert übernimmt
+        taschenlampenLicht.enabled = istAn;
+    }
 
     void Update()
     {
@@ -35,7 +42,7 @@ public class Taschenlampe : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator Flackern()
+    private IEnumerator Flackern()
     {
         flackertGerade = true;
         taschenlampenLicht.enabled = false;
