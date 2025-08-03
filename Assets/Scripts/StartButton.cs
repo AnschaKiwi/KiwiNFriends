@@ -5,6 +5,6 @@ public class StartButton : MonoBehaviour
 {
     public void SpielStarten()
     {
-        SceneManager.LoadScene("Zelda Scene");
+        SceneManager.LoadScene("LoadingScene");
     }
 }
