@@ -4,7 +4,7 @@ using System.Collections;
 
 public class LadeScene : MonoBehaviour
 {
-    public string zielSzene = "SpielScene";
+    public string zielSzene = "StartHaus";
     void Start()
     {
         StartCoroutine(SzeneLaden());

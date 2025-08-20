@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4254e02660dd77140a5ef1c474948fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zielSzene: SpielScene
+  zielSzene: StartHaus
 --- !u!4 &97695668
 Transform:
   m_ObjectHideFlags: 0

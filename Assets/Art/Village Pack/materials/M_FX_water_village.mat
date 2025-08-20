@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_FX_water_village
+  m_Shader: {fileID: 4800000, guid: 21842bd9ec061f743880b0350227a3e6, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _EnvironmentReflections: 1
+    - _FoamDistance: 0.49
+    - _Gloss: 0.92
+    - _Normal1Size: 0.1
+    - _Normal2Size: 0.15
+    - _NormalStrength: 1.56
+    - _Opacity: 0.538
+    - _QueueControl: -1
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _RippleDissolve: 3.83
+    - _RippleScale: 5
+    - _RippleSpeed: 1
+    - _RipplesNormalStrength: 1
+    - _RipplesTransparency: 5
+    - _SpecularHighlights: 1
+    m_Colors:
+    - _BaseColor: {r: 0.044544328, g: 0.2452044, b: 0.8584906, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FoamColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0}
+    - _Normal1Speed: {r: 0.02, g: -0.02, b: 0, a: 0}
+    - _Normal2Speed: {r: 0.04, g: -0.01, b: 0, a: 0}
+    - _RipplesEmission: {r: 1, g: 1, b: 1, a: 0}
+  m_BuildTextureStacks: []
